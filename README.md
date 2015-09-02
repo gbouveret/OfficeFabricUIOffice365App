@@ -1,2 +1,2 @@
 # OfficeFabricUIOffice365App
-Sample of Office 365 application (MVC) implementing Office Fabric UI
+A sample project of anOffice 365 application (MVC) implementing Office Fabric UI
