@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Office UI Fabric in Office 365 app Sample</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/fabric")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="ms-NavBar">
+        <div class="ms-NavBar-openMenu js-openMenu">
+            <i class="ms-Icon ms-Icon--menu"></i>
+        </div>
+        <ul class="ms-NavBar-items">
+            <li class="ms-NavBar-item">@Html.ActionLink("Home", "Index", "Home", new { @class = "ms-NavBar-link" })</li>
+            <li class="ms-NavBar-item">@Html.ActionLink("Contacts", "Contacts", "Home", new { @class = "ms-NavBar-link" })</li>
+            <li class="ms-NavBar-item">@Html.ActionLink("About", "About", "Home", new { @class = "ms-NavBar-link" })</li>
+            @Html.Partial("_LoginPartial")
+        </ul>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Office UI Fabric in Office 365 app Sample by Gaetan BOUVERET @@gbouveret</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

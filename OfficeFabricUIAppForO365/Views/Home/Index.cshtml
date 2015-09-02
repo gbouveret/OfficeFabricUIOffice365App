@@ -1,0 +1,29 @@
+﻿@model List<OfficeFabricUIAppForO365.Models.EmailMessage>
+@{
+    ViewBag.Title = "Home Page";
+}
+<div id="componentWrapper">
+    @if (Model != null)
+    {
+        <ul class="ms-List">
+            @foreach (var mail in Model) { 
+            <div class="ms-ListItem @(!mail.IsRead ? "is-unread" : "")">
+                <span class="ms-ListItem-primaryText">@mail.FromName</span>
+                <span class="ms-ListItem-secondaryText">@mail.Subject</span>
+                <span class="ms-ListItem-tertiaryText">@mail.Preview</span>
+                <span class="ms-ListItem-metaText">@mail.Received.ToString()</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                    @if (mail.Importance == "High") { 
+                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+                    }
+                </div>
+            </div>
+            }
+        </ul>
+    }
+    else
+    {
+        <h3>Sign in to see your emails</h3>
+    }
+</div>
